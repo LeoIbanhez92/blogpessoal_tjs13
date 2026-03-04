@@ -57,7 +57,7 @@ export class PostagemService {
         //? UPDATE  TB_POSTAGEM SET TITULO = ?-> VALORES INFORMADO PELO USUARIO
 
         if(!postagem.id || postagem.id <= 0)
-            throw new HttpException("O ID da postagem é inválidp", HttpStatus.BAD_REQUEST);
+            throw new HttpException("O ID da postagem é inválido", HttpStatus.BAD_REQUEST);
         await this.findById(postagem.id);
 
         return this.postagemRepository.save(postagem);
